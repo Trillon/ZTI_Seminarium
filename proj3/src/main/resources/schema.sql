@@ -2,8 +2,16 @@ CREATE TABLE users (
   id         INTEGER PRIMARY KEY,
   username VARCHAR(30),
   password  VARCHAR(50),
-  role VARCHAR(10)
+  enabled boolean
 );
 
-INSERT INTO users VALUES (1, 'admin', 'admin', 'ROLE_ADMIN');
-INSERT INTO users VALUES (2, 'user', 'user', 'ROLE_USER');
+CREATE TABLE authorities (
+  username VARCHAR(30),
+  authority  VARCHAR(50)
+);
+
+INSERT INTO users VALUES (1, 'admin', 'admin', true);
+INSERT INTO users VALUES (2, 'user', 'user', true);
+
+INSERT INTO authorities VALUES ('user', 'ROLE_USER');
+INSERT INTO authorities VALUES ('admin', 'ROLE_ADMIN');

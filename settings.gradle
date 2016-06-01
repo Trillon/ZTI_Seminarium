@@ -2,4 +2,5 @@ rootProject.name = 'security'
 include 'proj1'
 include 'proj2'
 include 'proj3'
+include 'proj4'
 
